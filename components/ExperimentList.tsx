@@ -1,0 +1,4 @@
+import { experiments } from '@/data/lab';
+export function ExperimentList() {
+  return <div className="experiments">{experiments.map(experiment => <details className="experiment" key={experiment.id}><summary><span className={`experiment-mark ${experiment.mark}`} aria-hidden="true">{experiment.mark === 'wave' ? 'ı||ı|ı||ı' : experiment.mark === 'dots' ? '⠿' : '✳'}</span><span className="experiment-label"><span className="micro">{experiment.number} / {experiment.category}</span><strong>{experiment.title}</strong><span className="experiment-status">{experiment.status}</span></span><span className="experiment-toggle" aria-hidden="true">+</span></summary><div className="experiment-detail"><p>{experiment.description}</p><p><span className="blue">The question → </span>{experiment.question}</p><small>Idea entry · a working demo is still to come.</small></div></details>)}</div>;
+}
