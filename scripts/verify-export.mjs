@@ -18,6 +18,7 @@ for (const route of routes) {
   for (const match of html.matchAll(/(?:href|src)="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
     let path = decodeURIComponent(match[1]);
     if (path.startsWith('//')) continue;
+    if (basePath) assert.ok(path === basePath || path.startsWith(basePath + '/'), 'Missing base path in ' + path + ' from ' + route);
     if (basePath && (path === basePath || path.startsWith(basePath + '/'))) path = path.slice(basePath.length) || '/';
     const target = join(root, path);
     assert.ok(existsSync(target) || existsSync(join(target, 'index.html')), `Broken asset/link ${path} from ${route}`);
@@ -27,5 +28,7 @@ for (const route of routes) {
 assert.ok(existsSync(join(root, '404.html')), 'Missing custom 404');
 assert.ok(!existsSync(join(root, 'photos')), 'Original photos must not ship');
 console.log(`PASS: ${routes.length} pages; ${checkedLinks} internal links/assets; metadata; draft noindex; custom 404; no original-image payload.`);
+
+
 
 
