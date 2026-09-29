@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 
 const root = resolve('out');
-const routes = ['/', '/work/', '/writing/', '/now/', '/lab/', '/about/', '/work/geo-copilot/', '/work/geo-audit-retrieval/', '/work/boss-recruitment-assistant/', '/work/storefront-generator/', '/work/ai-vocabulary/', '/writing/ai-recommendations/', '/writing/hr-as-software/', '/writing/building-before-knowing/', '/writing/singapore-august-2026/'];
+const routes = ['/', '/work/', '/writing/', '/now/', '/lab/', '/about/', '/work/geo-copilot/', '/work/geo-audit-retrieval/', '/work/boss-recruitment-assistant/', '/work/storefront-generator/', '/work/ai-vocabulary/', '/writing/ai-recommendations/', '/writing/hr-as-software/', '/writing/building-before-knowing/', '/writing/singapore-august-2026/', '/zh/', '/zh/work/', '/zh/writing/', '/zh/now/', '/zh/lab/', '/zh/about/', '/zh/work/geo-copilot/', '/zh/work/geo-audit-retrieval/', '/zh/work/boss-recruitment-assistant/', '/zh/work/storefront-generator/', '/zh/work/ai-vocabulary/', '/zh/writing/ai-recommendations/', '/zh/writing/hr-as-software/', '/zh/writing/building-before-knowing/', '/zh/writing/singapore-august-2026/'];
 let checkedLinks = 0;
 for (const route of routes) {
   const file = join(root, route, 'index.html');
@@ -13,7 +13,7 @@ for (const route of routes) {
   assert.match(html, /<meta name="description"/, `Missing description: ${route}`);
   assert.match(html, /<meta property="og:title"/, `Missing OpenGraph: ${route}`);
   assert.match(html, /id="main"/, `Missing main anchor: ${route}`);
-  if (route.startsWith('/writing/') && route !== '/writing/') assert.match(html, /noindex/, `Sample note should not be indexed: ${route}`);
+  if ((route.startsWith('/writing/') && route !== '/writing/') || (route.startsWith('/zh/writing/') && route !== '/zh/writing/')) assert.match(html, /noindex/, `Sample note should not be indexed: ${route}`);
   for (const match of html.matchAll(/(?:href|src)="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
     const path = decodeURIComponent(match[1]);
     if (path.startsWith('//')) continue;
