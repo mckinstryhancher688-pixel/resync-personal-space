@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { site } from '@/data/site';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://resync-field-notes.pink-gull-8474.chatgpt.site'),
+  metadataBase: new URL('https://resync-field-notes.hsqhxr.chatgpt.site'),
   title: { default: site.title, template: '%s — Resync' },
   description: site.description,
   openGraph: { title: site.title, description: site.description, type: 'website', locale: 'en_US', siteName: site.name },
