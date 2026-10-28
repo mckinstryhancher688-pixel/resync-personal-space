@@ -4,7 +4,16 @@ import { resolve, join } from 'node:path';
 
 const root = resolve('out');
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const routes = ['/', '/work/', '/writing/', '/now/', '/lab/', '/about/', '/work/geo-copilot/', '/work/geo-audit-retrieval/', '/work/boss-recruitment-assistant/', '/work/storefront-generator/', '/work/ai-vocabulary/', '/writing/ai-recommendations/', '/writing/hr-as-software/', '/writing/building-before-knowing/', '/writing/singapore-august-2026/', '/zh/', '/zh/work/', '/zh/writing/', '/zh/now/', '/zh/lab/', '/zh/about/', '/zh/work/geo-copilot/', '/zh/work/geo-audit-retrieval/', '/zh/work/boss-recruitment-assistant/', '/zh/work/storefront-generator/', '/zh/work/ai-vocabulary/', '/zh/writing/ai-recommendations/', '/zh/writing/hr-as-software/', '/zh/writing/building-before-knowing/', '/zh/writing/singapore-august-2026/'];
+const projectSlugs = ['geo-copilot', 'research-lab', 'xuxiake-ai', 'onework', 'personal-os', 'atlas'];
+const noteSlugs = ['ai-recommendations', 'hr-as-software', 'building-before-knowing', 'singapore-august-2026'];
+const routes = [
+  '/', '/work/', '/writing/', '/now/', '/lab/', '/about/',
+  ...projectSlugs.map(slug => `/work/${slug}/`),
+  ...noteSlugs.map(slug => `/writing/${slug}/`),
+  '/zh/', '/zh/work/', '/zh/writing/', '/zh/now/', '/zh/lab/', '/zh/about/',
+  ...projectSlugs.map(slug => `/zh/work/${slug}/`),
+  ...noteSlugs.map(slug => `/zh/writing/${slug}/`),
+];
 let checkedLinks = 0;
 for (const route of routes) {
   const file = join(root, route, 'index.html');

@@ -39,6 +39,22 @@
 @media(prefers-reduced-motion:reduce){.hero-edition,.masthead,.hero-spread,.current-strip{animation:none;opacity:1;filter:none}.signal-track{animation:none}.hero-artwork-image,.photo img{will-change:auto}}
 [lang='zh-CN']{font-family:Arial,Helvetica,'Microsoft YaHei','PingFang SC',sans-serif;letter-spacing:0}
 [lang='zh-CN'] em{font-family:'Noto Serif CJK SC','Songti SC',serif;font-style:normal}
+.work-family{display:grid;grid-template-columns:.75fr 1.25fr;gap:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:29px 0 32px;margin:10px 0 76px}
+.work-family>div:first-child p{font:24px/1.35 var(--serif);letter-spacing:-.02em;max-width:340px;margin-top:13px}
+.work-family-tools{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.work-family-tools>div{border-left:1px solid var(--line);padding-left:20px}
+.work-family-tools strong{display:block;font-size:16px;font-weight:500;margin-bottom:9px}
+.work-family-tools span{display:block;color:var(--muted);font-size:13px;line-height:1.65}
+.work-list-intro{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:27px}
+.work-list-intro p{font:22px/1.4 var(--serif);max-width:570px}
+.project-row-status{display:block;font:10px/1.5 var(--mono);letter-spacing:.02em;color:var(--blue);margin-top:9px}
+.work-role-note{border-left:2px solid var(--blue);color:var(--muted);font-size:14px;line-height:1.75;max-width:700px;padding-left:19px;margin:39px 0 0 auto}
+.work-more-link{margin-top:26px}
+.project-parts{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.project-parts>div{border-left:1px solid var(--line);padding-left:18px}
+.project-parts h3{font-size:17px;font-weight:500;line-height:1.35;margin-bottom:9px}
+.project-detail-section .project-parts p{font-size:15px;line-height:1.7}
+@media(max-width:700px){.work-family{grid-template-columns:1fr;gap:25px;margin:8px 0 54px}.work-family>div:first-child p{font-size:22px}.work-family-tools{grid-template-columns:1fr;gap:17px}.work-list-intro{display:block;margin-bottom:22px}.work-list-intro p{font-size:20px;margin-top:10px}.project-parts{grid-template-columns:1fr;gap:18px}.work-role-note{margin-top:34px}}
 .main-nav .language-switch{font:11px/1.2 var(--mono);letter-spacing:.04em;color:var(--blue);border-left:1px solid var(--line);padding-left:18px}
 .main-nav .language-switch:hover{color:var(--ink)}
 @media(max-width:700px){.main-nav .language-switch{font-size:11px;padding:15px 0 5px;border-left:0;border-top:1px solid var(--line);margin-top:6px}}

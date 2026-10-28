@@ -23,11 +23,11 @@ node scripts/verify-export.mjs
 
 ## Information architecture
 
-- `/`: personal magazine cover, visual diary, short About, five projects, experiments and latest notes.
-- `/work`: project index; `/work/[slug]`: problem, build and learning questions for each project.
+- `/`: personal magazine cover, visual diary, short About, six selected projects, experiment previews and latest notes.
+- `/work`: six selected projects, GEO's supporting tools and honest stage labels; `/work/[slug]`: problem, outcome, personal role and open questions.
 - `/writing`: four sample notes; `/writing/[slug]`: readable article pages.
 - `/now`: easily edited snapshot of current attention.
-- `/lab`: expandable experiment ideas, explicitly marked as ideas rather than working demos.
+- `/lab`: six actual small tools and experiments, each marked with its verified stage or limit.
 - `/about`: personal context, provisional timeline and interests.
 - Unknown URLs: custom 404.
 
@@ -38,6 +38,7 @@ node scripts/verify-export.mjs
 | `data/site.ts` | Name, location, GitHub/X/email links; replace `null` with real URLs |
 | `data/photos.ts` | Central image paths, captions, alt text and proportions |
 | `data/projects.ts` | Project descriptions, problem, build and learning |
+| `data/zh.ts` | Chinese projects, experiments and other Chinese content |
 | `data/writing.ts` | Note metadata and Markdown body |
 | `data/now.ts` | Current activities, last-updated label and draft marker |
 | `data/lab.ts` | Experiment ideas, status and questions |
@@ -61,9 +62,9 @@ To regenerate images after replacing the originals, install `sharp` explicitly i
 - Photo authorship, personal captions and dates need confirmation; imagery is reused from the previous project.
 - All four articles and their dates are sample drafts, with `noindex` on the draft detail pages.
 - Project visuals are clearly labeled conceptual workflow illustrations, not screenshots of shipped software.
-- Project learning statements are open questions, awaiting first-hand lessons and specific decisions.
+- Project learning statements include open questions; screenshots and detailed first-hand decisions can still be added.
 - Now activities and timeline dates need a personal review.
-- Lab entries are ideas, without fake demo buttons.
+- Lab entries describe actual small tools and experiments, with their incomplete parts stated plainly; there are no fake demo buttons.
 - GitHub, X and Email are non-clickable until real links are supplied.
 
 ## Five high-value replacements

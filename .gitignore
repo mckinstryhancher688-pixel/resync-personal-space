@@ -8,3 +8,4 @@ out/
 source-images/
 output/
 artifacts/
+.playwright-cli/

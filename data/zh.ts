@@ -4,31 +4,64 @@ import type { Photo } from './photos';
 
 // 中文内容独立维护；保留 slug 以便中英文项目互相对应，但文案互不共享。
 export const zhProjects: Project[] = [
-  { slug: 'geo-copilot', number: '01', name: 'GEO Copilot', category: 'AI · GEO · 自动化', status: '真实客户交付', featured: true,
-    description: '把一个关于 AI 搜索的问题，做成当地商家真正能用的工作流。',
-    problem: '本地商家需要一种更实际的方法，理解并改善自己在 AI 推荐中的呈现。',
-    built: '一套实际运行的 GEO 内容生成、审计、去重、发布和效果检查系统。它已经用于真实客户交付，不是课程作业。',
-    learning: '我一直在追问：怎样才能让一个 AI 工作流在演示结束后仍然有用？' },
-  { slug: 'geo-audit-retrieval', number: '02', name: 'GEO Audit / Retrieval', category: 'AI 搜索 · 评估', status: '项目记录',
-    description: '进一步检查 AI 搜索找到了什么、遗漏了什么，以及它为何这样推荐。',
-    problem: '只看 AI 的回答，不足以判断一家企业的信息底座是否可靠，也解释不了它为何被检索到。',
-    built: '用于检查企业信息基础、检索、排序和内容表现的一组工具。',
-    learning: '一个还没想清楚的问题：除了“被提到”，好的评估还应该衡量什么？' },
-  { slug: 'boss-recruitment-assistant', number: '03', name: 'Boss 招聘辅助工具', category: 'AI · HR', status: '本地工具',
-    description: '把所学专业和正在尝试的工具，接在一起的一次小实践。',
-    problem: '筛选候选人时常常要反复核对关键词，而经历背后的含义很容易被漏掉。',
-    built: '一个用于 Boss 直聘候选人筛选的本地辅助工具，结合关键词过滤与语义排序，帮助人进行复核。',
-    learning: '软件可以怎样辅助 HR 判断，而不悄悄取代判断？' },
-  { slug: 'storefront-generator', number: '04', name: '门头效果图生成器', category: 'AI 图像 · 工具', status: '小工具',
-    description: '把一个门头改造的想法，快速变成能看见的效果图。',
-    problem: '店主可能已经有了招牌的新想法，却没有一个简单的方法先看看它会是什么样。',
-    built: '一个用 AI 图像快速生成商家门头概念图的小工具。',
-    learning: '还在探索，怎样让用户更快得到第一张有用的图。' },
-  { slug: 'ai-vocabulary', number: '05', name: 'AI 词汇卡', category: '学习工具', status: '个人项目',
-    description: '让陌生的 AI 与计算机术语，变得稍微熟悉一点。',
-    problem: '学习 AI 时，总会反复遇到计算机科学里的新词。',
-    built: '一个围绕 AI 和计算机科学词汇展开的小型学习项目。',
-    learning: '一个持续中的问题：第一次解释之后，什么能帮人真正记住一个新词？' },
+  {
+    slug: 'geo-copilot', number: '01', name: 'GEO Copilot',
+    category: 'AI · GEO · 客户项目', status: '服务过 10 位客户 · 暂停接新客', featured: true,
+    description: '从真实客户工作里长出的一套 GEO 流程；公开可见的目前仍是主系统 Demo。',
+    problem: '本地商家需要更实际的办法整理自身信息、制作内容，并检查在 AI 推荐中如何被呈现。',
+    built: '围绕客户资料、标题、文章、审核和交付建立工作台。Site Builder 负责客户网站包，图文视频工作台支撑内容制作。当前只有主 GEO 的 Demo 上线，完整流程并非公开运营产品。',
+    role: '我主要提需求、操作测试、检验结果、根据反馈选择方案并调整流程，也与客户沟通；具体代码几乎全部由 AI 实现。',
+    learning: '平台规则变化后，我们暂停接收新客户。比起生成了多少内容，我更想把每位客户真正得到什么核对清楚。',
+    parts: [
+      { name: 'Site Builder', description: '根据客户配置生成网站包，是 GEO 客户工作的辅助工具，不单独算一条产品主线。' },
+      { name: '图文视频工作台', description: '处理本地素材，制作图文和短视频，并管理内容任务。' },
+    ],
+  },
+  {
+    slug: 'research-lab', number: '02', name: 'Research Lab',
+    category: 'AI 搜索 · 调查监测', status: '研究工具 · 有离线验收记录',
+    description: '把公开来源、豆包回答和采样结果放在一起查的独立工具。',
+    problem: '只看一次 AI 回答，很难知道推荐从哪里来，也难判断它能否重复出现。',
+    built: '保存来源、调查快照和采样结果的研究工具。本机测试核对过数据库及与 GEO Copilot 的桥接；持续线上采样的现状仍待确认。',
+    role: '我提出监测问题、测试流程并审看结果；代码实现主要由 AI 完成。',
+    learning: '比一次看起来漂亮的回答更重要的是：来源能追溯，采样能重复。',
+  },
+  {
+    slug: 'xuxiake-ai', number: '03', name: '徐霞客 AI',
+    category: 'AI · 旅行 · 产品', status: '开发中 · 有浏览器测试记录',
+    description: '让两名旅行搭子一起决定行程，而不是由系统替他们拍板。',
+    problem: '两个人的旅行偏好和硬性条件可能冲突，规划工具需要解释取舍。',
+    built: '把两人的偏好与约束、飞猪地点候选、高德路线和 AI 解释接成协商流程。资料记录了浏览器测试；项目仍在开发，我还没有把它当作自己的旅行工具使用。',
+    role: '我设计协商流程、测试体验并根据结果选择修改方向；具体代码几乎全部由 AI 完成。',
+    learning: '比“生成一条路线”更难的是说清楚：为什么删掉、替换或保留某一站。',
+  },
+  {
+    slug: 'onework', number: '04', name: '一起做 OneWork',
+    category: 'AI Agent · 协作', status: '原型 · 交易仍为模拟',
+    description: '试着让 AI 参与发单、报价、交付和验收。',
+    problem: '当 Agent 帮人协调工作时，谁来授权、谁来验收、出了问题由谁负责？',
+    built: '发单、报价、交付和验收原型，测试过真实模型调用；订单、交易对手和资金仍是模拟。',
+    role: '我提出产品问题、测试流程并审看方案；具体代码几乎全部由 AI 完成。',
+    learning: '一个能演示的流程，距离可信的真实交易还差很多验证。',
+  },
+  {
+    slug: 'personal-os', number: '05', name: 'Personal OS 个人工作台',
+    category: '个人软件 · 整理', status: '开发中 · 尚未自己使用',
+    description: '给项目、学习、比赛、求职和生活留一个共同入口。',
+    problem: '重要计划和没做完的想法散落在太多地方。',
+    built: '已经有可运行页面的个人工作台，集中项目、学习、比赛、求职和生活记录。目前仍在开发，我还没有自己使用。',
+    role: '我决定要收什么、怎么组织，检查界面并持续调整；实现主要由 AI 辅助完成。',
+    learning: '它是否有用，要看没有演示需求的时候，我会不会继续打开它。',
+  },
+  {
+    slug: 'atlas', number: '06', name: 'Atlas 我的世界足迹',
+    category: '旅行 · 个人软件', status: '开发中 · 尚未自己使用',
+    description: '把到过的地方、照片和时间，慢慢留在一张地图上。',
+    problem: '只有目的地清单，很容易丢失一段旅行真正属于自己的细节。',
+    built: '支持到访记录、照片、时间回看和 ZIP 备份的旅行地图。本地有验收截图，但我还没有自己使用。',
+    role: '我提出并检查使用体验；具体代码主要由 AI 完成。',
+    learning: '一张个人地图真正有意思，是在真实记忆不断加入之后。',
+  },
 ];
 
 export const zhNotes: Note[] = [
@@ -59,9 +92,12 @@ export const zhNow = {
 };
 
 export const zhExperiments = [
-  { id: 'voice', number: '001', title: '和一个想法聊聊', category: 'AI 语音', status: '草图阶段', description: '一个用来边说边想的语音界面，会是什么感觉？', question: '助手能不能先接住一个念头，而不是急着给出答案？', mark: 'wave' },
-  { id: 'retrieval', number: '002', title: '同一个问题，不同的答案', category: '检索测试', status: '待探索', description: '记录 AI 搜索找到了什么，又把什么留在了视野之外。', question: '只改几个词，会让检索结果变化多少？', mark: 'dots' },
-  { id: 'prompts', number: '003', title: '拆开一个 Prompt', category: '提示词实验', status: '草图阶段', description: '每次只改一条指令，也把有意思的错误留下来。', question: '提示词里究竟哪些部分改变了结果？', mark: 'asterisk' },
+  { id: 'boss', number: '001', title: 'BOSS 招聘辅助工具', category: 'AI · HR', status: '历史本地工具', description: '用关键词与语义线索辅助查看候选人资料的本地工具。', question: '软件怎样帮招聘者看清上下文，而不是替人做决定？', note: '历史小项目，并非已部署的招聘决策系统。', mark: 'dots' },
+  { id: 'storefront', number: '002', title: '门头效果图生成器', category: 'AI 图像 · 小工具', status: '可用的小工具', description: '快速生成门头概念图，让店铺想法先变得可见。', question: '能不能在长设计说明之前，先拿到一张有用的参考图？', note: '生成的是概念图，不是已由客户验收的最终设计。', mark: 'asterisk' },
+  { id: 'muse', number: '003', title: 'Muse 远程电脑桥', category: '远程桌面 · 实验', status: '部分流程已测试', description: '用 Python 和 PowerShell 从远端读取 Windows 桌面。', question: '远程操作的可靠性与权限边界应该怎样建立？', note: '读屏和截图测过；点击、键入尚未完整验收。', mark: 'wave' },
+  { id: 'beichen', number: '004', title: '北辰知识图谱', category: '知识管理 · 原型', status: '基础部分已完成', description: '把个人知识组织成图谱的独立应用实验。', question: '图谱应该帮助我看到哪些普通文件夹看不到的联系？', note: '登录和数据库基础已完成；知识编辑、交互图谱和 AI 功能还在后续阶段。', mark: 'dots' },
+  { id: 'games', number: '005', title: '3D 与游戏草稿', category: 'Three.js · 玩法', status: '可展示原型', description: '一个实验仓库里的 FPS、足球、地球和城市等交互场景。', question: '一个交互场景在成为完整游戏之前，可以先表达什么？', note: '这是多个作品原型的合集，不重复算成多款商业产品。', mark: 'asterisk' },
+  { id: 'wechat', number: '006', title: '公众号 GEO 写作 Demo', category: '内容 · Demo', status: '单页演示', description: '生成 GEO 标题、文章草稿和封面提示词的小页面。', question: '生成的内容真正发布之前，还需要核对什么？', note: '尚无完整检索、事实核验或自动发布流程。', mark: 'wave' },
 ];
 
 export const zhTimeline = [
