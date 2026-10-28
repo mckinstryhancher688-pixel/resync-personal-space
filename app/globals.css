@@ -58,3 +58,6 @@
 .main-nav .language-switch{font:11px/1.2 var(--mono);letter-spacing:.04em;color:var(--blue);border-left:1px solid var(--line);padding-left:18px}
 .main-nav .language-switch:hover{color:var(--ink)}
 @media(max-width:700px){.main-nav .language-switch{font-size:11px;padding:15px 0 5px;border-left:0;border-top:1px solid var(--line);margin-top:6px}}
+
+/* Persistent bilingual control and direct project entry. */
+.language-control{display:flex;align-items:center;gap:8px;flex-shrink:0;font:12px var(--mono)}.language-control a{padding:8px 5px;color:var(--muted)}.language-control a[aria-current=page]{color:var(--blue);border-bottom:1px solid var(--blue)}.language-control>span{color:var(--line)}.project-demo-entry{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:20px 0;border-block:1px solid var(--line);margin:5px 0 32px}.project-demo-entry a{font-size:14px;color:var(--blue);flex-shrink:0}.project-demo-entry span{font:10px/1.7 var(--mono);color:var(--muted);max-width:340px}.header-social{display:none}@media(max-width:700px){.site-header{gap:18px}.logo{margin-right:auto}.language-control{order:2;font-size:11px}.menu-toggle{order:3;padding-left:0}.project-demo-entry{align-items:start;flex-direction:column;gap:10px}.project-demo-entry a{font-size:13px}.project-demo-entry span{font-size:10px}}

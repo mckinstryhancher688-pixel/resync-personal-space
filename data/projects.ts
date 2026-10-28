@@ -15,11 +15,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'geo-copilot', number: '01', name: 'GEO Copilot',
+    slug: 'geo-copilot', number: '01', name: 'Soujian Lab',
     category: 'AI · GEO · Client work', status: '10 client engagements · intake paused', featured: true,
-    description: 'A GEO workflow shaped through work with ten real clients. The public version is still a demo.',
+    description: 'A GEO project connecting brand research, AI search monitoring and content delivery, shaped through work with ten real clients.',
     problem: 'Local businesses needed a practical way to organize their facts, create useful content and check how they appear in AI recommendations.',
-    built: 'A workspace for client information, titles, articles, review and delivery. Its supporting tools cover customer website packages and image/video production. Only the main GEO demo is online; the full workflow is not a public product.',
+    built: 'A workspace for client information, titles, articles, review and delivery. Its supporting tools cover customer website packages and image/video production. Soujian Lab presents Copilot and Research Lab through a fictional interactive case. The real business systems remain local.',
     role: 'I defined requirements, tested outputs, chose approaches from feedback, refined the workflow and spoke with clients. AI produced almost all of the implementation code.',
     learning: 'Platform rules changed, so we stopped taking new clients. I still want clearer evidence of what helped each client, beyond what the system generated.',
     parts: [

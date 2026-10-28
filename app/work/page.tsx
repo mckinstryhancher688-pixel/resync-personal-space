@@ -12,8 +12,9 @@ export default async function Work() {
     <Intro index="01" title="Work" description="Real client work, independent research and personal prototypes. Each has a different stage." aside={`SELECTED WORK / 01—${String(projects.length).padStart(2, '0')}`} />
     <Link href="/work/geo-copilot" className="featured-project">
       <ProjectVisual />
-      <div className="featured-copy"><span className="eyebrow">FEATURED / GEO MAIN LINE</span><h3>GEO Copilot <span>↗</span></h3><p>{geo.description}</p><div className="project-proof"><span className="status-dot" />Ten real clients. New intake paused.</div><span className="text-link">Read the project notes ↗</span></div>
+      <div className="featured-copy"><span className="eyebrow">FEATURED / GEO MAIN LINE</span><h3>Soujian Lab <span>↗</span></h3><p>{geo.description}</p><div className="project-proof"><span className="status-dot" />Ten real clients. New intake paused.</div><span className="text-link">Read the project notes ↗</span></div>
     </Link>
+    <div className="project-demo-entry"><a href="https://geo.peiqirui.com/" target="_blank" rel="noreferrer">Open Soujian Lab · explore the GEO demo ↗</a><span>Brand research → AI search monitoring → reviewed content · fictional case</span></div>
     <div className="work-family"><div><span className="eyebrow">GROWN FROM THE GEO WORK</span><p>One client workflow, with different tools for different jobs.</p></div><div className="work-family-tools">{geo.parts?.map(part => <div key={part.name}><strong>{part.name}</strong><span>{part.description}</span></div>)}</div></div>
     <div className="work-list-intro"><span className="eyebrow">MORE THAN ONE KIND OF BUILD</span><p>Research, travel, collaboration and the tools I am still trying to make useful.</p></div>
     <ProjectList projects={projects.slice(1)} />

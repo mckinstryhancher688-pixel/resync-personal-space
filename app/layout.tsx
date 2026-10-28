@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { SkipLink } from '@/components/SkipLink';
 import { site } from '@/data/site';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://resync-field-notes.hsqhxr.chatgpt.site'),
+  metadataBase: new URL('https://peiqirui.com'),
   title: { default: site.title, template: '%s — Resync' },
   description: site.description,
   openGraph: { title: site.title, description: site.description, type: 'website', locale: 'en_US', siteName: site.name },

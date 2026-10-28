@@ -5,11 +5,11 @@ import type { Photo } from './photos';
 // 中文内容独立维护；保留 slug 以便中英文项目互相对应，但文案互不共享。
 export const zhProjects: Project[] = [
   {
-    slug: 'geo-copilot', number: '01', name: 'GEO Copilot',
+    slug: 'geo-copilot', number: '01', name: '搜见实验室',
     category: 'AI · GEO · 客户项目', status: '服务过 10 位客户 · 暂停接新客', featured: true,
-    description: '从真实客户工作里长出的一套 GEO 流程；公开可见的目前仍是主系统 Demo。',
+    description: '把品牌研究、AI 搜索监测和内容交付连起来的 GEO 项目；由 10 位真实客户的工作经历发展而来。',
     problem: '本地商家需要更实际的办法整理自身信息、制作内容，并检查在 AI 推荐中如何被呈现。',
-    built: '围绕客户资料、标题、文章、审核和交付建立工作台。Site Builder 负责客户网站包，图文视频工作台支撑内容制作。当前只有主 GEO 的 Demo 上线，完整流程并非公开运营产品。',
+    built: '围绕客户资料、标题、文章、审核和交付建立工作台。Site Builder 负责客户网站包，图文视频工作台支撑内容制作。公开展示站“搜见实验室”已整合 Copilot 与 Research Lab 的虚构案例演示；真实业务系统保留在本机。',
     role: '我主要提需求、操作测试、检验结果、根据反馈选择方案并调整流程，也与客户沟通；具体代码几乎全部由 AI 实现。',
     learning: '平台规则变化后，我们暂停接收新客户。比起生成了多少内容，我更想把每位客户真正得到什么核对清楚。',
     parts: [

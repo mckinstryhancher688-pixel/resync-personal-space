@@ -6,7 +6,9 @@ import { navigation } from '@/data/site';
 import { SocialLinks } from './SocialLinks';
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, '') || '/';
+  const englishPath = pathname.replace(/^\/zh(?=\/|$)/, '') || '/';
+  const chinesePath = `/zh${englishPath === '/' ? '' : englishPath}`;
   const isZh = pathname === '/zh' || pathname.startsWith('/zh/');
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -18,8 +20,11 @@ export function Header() {
     <button ref={toggle} className="menu-toggle" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>{open ? (isZh ? '关闭 −' : 'Close −') : (isZh ? '菜单 +' : 'Menu +')}</button>
     <nav id="main-nav" aria-label={isZh ? '主导航' : 'Main navigation'} className={open ? 'main-nav is-open' : 'main-nav'}>
       {items.map(({ label, href }) => <Link key={href} href={href} aria-current={pathname === href || pathname.startsWith(`${href}/`) ? 'page' : undefined} onClick={() => setOpen(false)}>{label}{label === (isZh ? '近况' : 'Now') && <i className="status-dot" aria-hidden="true" />}</Link>)}
-      <Link className="language-switch" href={isZh ? (pathname === '/zh' ? '/' : pathname.replace(/^\/zh/, '')) : `/zh${pathname === '/' ? '' : pathname}`} aria-label={isZh ? '切换到英文版' : 'Switch to Chinese'} onClick={() => setOpen(false)}>{isZh ? 'EN ↗' : '中文 ↗'}</Link>
+
     </nav>
+    <div className="language-control" role="group" aria-label="Language / 语言">
+      <Link href={chinesePath} hrefLang="zh-CN" lang="zh-CN" aria-label="切换到中文版" aria-current={isZh ? 'page' : undefined} onClick={() => setOpen(false)}>中文</Link><span aria-hidden="true">/</span><Link href={englishPath} hrefLang="en" lang="en" aria-label="Switch to English" aria-current={!isZh ? 'page' : undefined} onClick={() => setOpen(false)}>EN</Link>
+    </div>
     <div className="header-social"><SocialLinks compact lang={isZh ? 'zh' : 'en'} /></div>
   </header>;
 }

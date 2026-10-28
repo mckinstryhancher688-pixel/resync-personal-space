@@ -1,13 +1,24 @@
 import { createServer } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, stat, readdir } from 'node:fs/promises';
 import { resolve, join, extname, sep } from 'node:path';
 const root = resolve('out');
+// Next's Windows static export nests segment payloads; browsers request dotted names.
+// Resolve only existing export files, without changing the deployed output.
+const segmentAliases = new Map();
+for (const entry of await readdir(root, { recursive: true })) {
+  const normalized = entry.replaceAll('\\', '/');
+  const start = normalized.indexOf('__next.');
+  if (start >= 0 && normalized.endsWith('.txt')) {
+    const alias = normalized.slice(0, start) + normalized.slice(start).replaceAll('/', '.');
+    segmentAliases.set('/' + alias, resolve(root, entry));
+  }
+}
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.txt': 'text/plain', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 await stat(join(root, 'index.html')).catch(() => { throw new Error('Run npm run build before npm start.'); });
 createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-    let file = resolve(root, '.' + pathname);
+    let file = segmentAliases.get(pathname) || resolve(root, '.' + pathname);
     if (file !== root && !file.startsWith(root + sep)) { response.writeHead(403); response.end(); return; }
     let status = 200;
     try { if ((await stat(file)).isDirectory()) file = join(file, 'index.html'); await stat(file); }
