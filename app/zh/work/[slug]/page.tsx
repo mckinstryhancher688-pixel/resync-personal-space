@@ -27,6 +27,7 @@ export default async function ChineseProjectPage({ params }: { params: Promise<{
         <h1>{project.name}</h1><p>{project.description}</p>
         <div className="article-meta"><span>{project.status}</span><span>项目记录 · 持续更新</span></div>
       </header>
+      {(project.slug === 'geo-copilot' || project.slug === 'research-lab') && <p><a className="text-link" href={project.slug === 'research-lab' ? 'https://geo.peiqirui.com/lab/' : 'https://geo.peiqirui.com/'} target="_blank" rel="noreferrer">体验互动演示（虚拟数据） ↗</a></p>}
       {project.featured && <ProjectVisual lang="zh" />}
       <section className="project-detail-section"><h2>01 / 要解决的问题</h2><p>{project.problem}</p></section>
       <section className="project-detail-section"><h2>02 / 做成了什么</h2><p>{project.built}</p></section>

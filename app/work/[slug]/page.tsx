@@ -25,6 +25,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <h1>{project.name}</h1><p>{project.description}</p>
         <div className="article-meta"><span>{project.status}</span><span>Project notes · an ongoing record</span></div>
       </header>
+      {(project.slug === 'geo-copilot' || project.slug === 'research-lab') && <p><a className="text-link" href={project.slug === 'research-lab' ? 'https://geo.peiqirui.com/lab/' : 'https://geo.peiqirui.com/'} target="_blank" rel="noreferrer">Explore interactive demo (fictional data) ↗</a></p>}
       {project.featured && <ProjectVisual />}
       <section className="project-detail-section"><h2>01 / THE PROBLEM</h2><p>{project.problem}</p></section>
       <section className="project-detail-section"><h2>02 / WHAT TOOK SHAPE</h2><p>{project.built}</p></section>
