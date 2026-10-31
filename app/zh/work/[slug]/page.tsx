@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ProjectVisual } from '@/components/ProjectVisual';
+import { ProjectEvidence } from '@/components/ProjectEvidence';
 import { zhProjects } from '@/data/zh';
 
 export function generateStaticParams() {
@@ -27,8 +27,7 @@ export default async function ChineseProjectPage({ params }: { params: Promise<{
         <h1>{project.name}</h1><p>{project.description}</p>
         <div className="article-meta"><span>{project.status}</span><span>项目记录 · 持续更新</span></div>
       </header>
-      {(project.slug === 'geo-copilot' || project.slug === 'research-lab') && <p><a className="text-link" href={project.slug === 'research-lab' ? 'https://geo.peiqirui.com/lab/' : 'https://geo.peiqirui.com/'} target="_blank" rel="noreferrer">体验互动演示（虚拟数据） ↗</a></p>}
-      {project.featured && <ProjectVisual lang="zh" />}
+      <ProjectEvidence slug={project.slug} lang="zh" />
       <section className="project-detail-section"><h2>01 / 要解决的问题</h2><p>{project.problem}</p></section>
       <section className="project-detail-section"><h2>02 / 做成了什么</h2><p>{project.built}</p></section>
       {project.parts && <section className="project-detail-section"><h2>主线里的工具</h2><div className="project-parts">{project.parts.map(part => <div key={part.name}><h3>{part.name}</h3><p>{part.description}</p></div>)}</div></section>}

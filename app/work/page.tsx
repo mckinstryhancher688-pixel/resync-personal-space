@@ -1,3 +1,4 @@
+import { ProjectShelf } from '@/components/ProjectEvidence';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Intro } from '@/components/Intro';
@@ -10,6 +11,7 @@ export default async function Work() {
   const geo = projects[0];
   return <main id="main" className="shell interior">
     <Intro index="01" title="Work" description="Real client work, independent research and personal prototypes. Each has a different stage." aside={`SELECTED WORK / 01—${String(projects.length).padStart(2, '0')}`} />
+    <ProjectShelf />
     <Link href="/work/geo-copilot" className="featured-project">
       <ProjectVisual />
       <div className="featured-copy"><span className="eyebrow">FEATURED / GEO MAIN LINE</span><h3>Soujian Lab <span>↗</span></h3><p>{geo.description}</p><div className="project-proof"><span className="status-dot" />Ten real clients. New intake paused.</div><span className="text-link">Read the project notes ↗</span></div>

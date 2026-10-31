@@ -1,3 +1,4 @@
+import { ProjectShelf } from '@/components/ProjectEvidence';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Intro } from '@/components/Intro';
@@ -9,6 +10,7 @@ export default function ChineseWork() {
   const geo = zhProjects[0];
   return <main id="main" lang="zh-CN" className="shell interior">
     <Intro lang="zh-CN" index="01" title="项目" description="真实客户工作、独立研究和个人原型。每个项目都处在不同阶段。" aside={`精选项目 / 01—${String(zhProjects.length).padStart(2, '0')}`} />
+    <ProjectShelf lang="zh" />
     <Link href="/zh/work/geo-copilot" className="featured-project">
       <ProjectVisual lang="zh" />
       <div className="featured-copy"><span className="eyebrow">主线 / GEO 客户项目</span><h3>搜见实验室 <span>↗</span></h3><p>{geo.description}</p><div className="project-proof"><span className="status-dot" />10 位真实客户 · 已暂停接新客</div><span className="text-link">查看项目记录 ↗</span></div>

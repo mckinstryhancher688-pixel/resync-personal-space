@@ -13,7 +13,7 @@ for (const entry of await readdir(root, { recursive: true })) {
     segmentAliases.set('/' + alias, resolve(root, entry));
   }
 }
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.txt': 'text/plain', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.txt': 'text/plain', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 await stat(join(root, 'index.html')).catch(() => { throw new Error('Run npm run build before npm start.'); });
 createServer(async (request, response) => {
   try {

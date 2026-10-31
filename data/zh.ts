@@ -19,7 +19,7 @@ export const zhProjects: Project[] = [
   },
   {
     slug: 'research-lab', number: '02', name: 'Research Lab',
-    category: 'AI 搜索 · 调查监测', status: '研究工具 · 有离线验收记录',
+    category: 'AI 搜索 · 调查监测', status: '研究模块 · 共用搜见实验室展示入口',
     description: '把公开来源、豆包回答和采样结果放在一起查的独立工具。',
     problem: '只看一次 AI 回答，很难知道推荐从哪里来，也难判断它能否重复出现。',
     built: '保存来源、调查快照和采样结果的研究工具。本机测试核对过数据库及与 GEO Copilot 的桥接；持续线上采样的现状仍待确认。',
@@ -28,7 +28,7 @@ export const zhProjects: Project[] = [
   },
   {
     slug: 'xuxiake-ai', number: '03', name: '徐霞客 AI',
-    category: 'AI · 旅行 · 产品', status: '开发中 · 有浏览器测试记录',
+    category: 'AI · 旅行 · 产品', status: '有发布验收记录 · 当前入口待复验',
     description: '让两名旅行搭子一起决定行程，而不是由系统替他们拍板。',
     problem: '两个人的旅行偏好和硬性条件可能冲突，规划工具需要解释取舍。',
     built: '把两人的偏好与约束、飞猪地点候选、高德路线和 AI 解释接成协商流程。资料记录了浏览器测试；项目仍在开发，我还没有把它当作自己的旅行工具使用。',
@@ -40,7 +40,7 @@ export const zhProjects: Project[] = [
     category: 'AI Agent · 协作', status: '原型 · 交易仍为模拟',
     description: '试着让 AI 参与发单、报价、交付和验收。',
     problem: '当 Agent 帮人协调工作时，谁来授权、谁来验收、出了问题由谁负责？',
-    built: '发单、报价、交付和验收原型，测试过真实模型调用；订单、交易对手和资金仍是模拟。',
+    built: '覆盖需求整理、报价、双方协议、交付检查和人工验收。Agent Economy 测试过真实模型调用，本地可执行 CSV 计算与文件交付；身份与资金仍为示例，尚非真实交易平台。',
     role: '我提出产品问题、测试流程并审看方案；具体代码几乎全部由 AI 完成。',
     learning: '一个能演示的流程，距离可信的真实交易还差很多验证。',
   },
@@ -80,29 +80,30 @@ export const zhPhotos: Photo[] = [
 ];
 
 export const zhNow = {
-  updated: '2026 年 9 月', isDraft: true,
-  introduction: '一张关于最近注意力去向的小快照，随时可能变化。',
+  updated: '2026 年 10 月 31 日', isDraft: false,
+  introduction: '根据项目记录和学习档案整理的当前重点：把东西做出来，也把做到哪一步说清楚。',
   items: [
-    { label: '正在做', title: '更顺手的 GEO 评估流程', text: '把检索、内容检查和有用的反馈接起来，让整个流程更容易使用。' },
-    { label: '正在学', title: 'AI 系统、Python 与 HR', text: '继续追技术问题，同时把人和组织留在视野里。' },
-    { label: '在想', title: 'AI 如何改变组织', text: '不只是哪些任务变快了，还有决策和责任如何变化。' },
-    { label: '在读', title: '给下一本好书留个位置', text: '等待读书清单里有真实内容时，再把它放到这里。' },
-    { label: '在试', title: '更公开地写作', text: '把还没成形的问题写成短笔记，也允许它暂时不完整。' },
+    { label: '正在整理', title: '让项目真正被看见', text: '搜见实验室已有公开操作演示。继续为旅行、协作和个人工具补上实际界面、证据与合适的展示入口。' },
+    { label: '产品实践', title: '需求、测试和人工确认', text: '从 GEO 客户工作到 OneWork，继续思考谁提出需求、AI 做哪一步、由谁判断是否完成。' },
+    { label: '正在学', title: 'Python、SQL、Git 与统计基础', text: '通过小练习和具体项目理解数据与代码。当前还在补基础，不把 AI 辅助做成的项目等同于独立掌握技术栈。' },
+    { label: '在想', title: '把组织管理的方法借给 AI 协作', text: '从课程中的工作分析、岗位说明和胜任力出发，思考智能体的任务、权限、交接与责任。这仍是探索中的问题。' },
+    { label: '屏幕之外', title: '文学、历史、足球和旅行', text: '阅读文学，关注历史人物处境和制度，也看足球、动漫，走进不同城市。这些兴趣不必都变成生产力。' },
   ],
 };
 
 export const zhExperiments = [
-  { id: 'boss', number: '001', title: 'BOSS 招聘辅助工具', category: 'AI · HR', status: '历史本地工具', description: '用关键词与语义线索辅助查看候选人资料的本地工具。', question: '软件怎样帮招聘者看清上下文，而不是替人做决定？', note: '历史小项目，并非已部署的招聘决策系统。', mark: 'dots' },
+  { id: 'boss', number: '001', title: '招聘工具研究（外部参考）', category: 'AI · HR', status: '外部项目 · 本地研究', description: '用关键词与语义线索辅助查看候选人资料的本地工具。', question: '软件怎样帮招聘者看清上下文，而不是替人做决定？', note: '基于外部 BOSS 直聘助手的本地研究，不作为独立自研产品或招聘决策系统。', mark: 'dots' },
   { id: 'storefront', number: '002', title: '门头效果图生成器', category: 'AI 图像 · 小工具', status: '可用的小工具', description: '快速生成门头概念图，让店铺想法先变得可见。', question: '能不能在长设计说明之前，先拿到一张有用的参考图？', note: '生成的是概念图，不是已由客户验收的最终设计。', mark: 'asterisk' },
   { id: 'muse', number: '003', title: 'Muse 远程电脑桥', category: '远程桌面 · 实验', status: '部分流程已测试', description: '用 Python 和 PowerShell 从远端读取 Windows 桌面。', question: '远程操作的可靠性与权限边界应该怎样建立？', note: '读屏和截图测过；点击、键入尚未完整验收。', mark: 'wave' },
   { id: 'beichen', number: '004', title: '北辰知识图谱', category: '知识管理 · 原型', status: '基础部分已完成', description: '把个人知识组织成图谱的独立应用实验。', question: '图谱应该帮助我看到哪些普通文件夹看不到的联系？', note: '登录和数据库基础已完成；知识编辑、交互图谱和 AI 功能还在后续阶段。', mark: 'dots' },
   { id: 'games', number: '005', title: '3D 与游戏草稿', category: 'Three.js · 玩法', status: '可展示原型', description: '一个实验仓库里的 FPS、足球、地球和城市等交互场景。', question: '一个交互场景在成为完整游戏之前，可以先表达什么？', note: '这是多个作品原型的合集，不重复算成多款商业产品。', mark: 'asterisk' },
-  { id: 'wechat', number: '006', title: '公众号 GEO 写作 Demo', category: '内容 · Demo', status: '单页演示', description: '生成 GEO 标题、文章草稿和封面提示词的小页面。', question: '生成的内容真正发布之前，还需要核对什么？', note: '尚无完整检索、事实核验或自动发布流程。', mark: 'wave' },
+  { id: 'wechat', number: '006', title: '公众号 GEO 写作 Demo', category: '内容 · Demo', status: '历史 Demo · 已有主线入口', description: '生成 GEO 标题、文章草稿和封面提示词的小页面。', question: '生成的内容真正发布之前，还需要核对什么？', note: '早期单页 Demo 保留为历史记录；公众号助手的公开体验已并入搜见实验室，不重复算独立产品。', mark: 'wave' },
 ];
 
 export const zhTimeline = [
-  { year: '2026', title: '想法开始走进真实场景。', items: ['开始做 AI 和 GEO 工具。', '参与本地商家的真实项目交付。', '把 HR 专业兴趣和动手做 AI 项目连在一起。'], draft: true },
-  { year: '更早', title: '有很多问题，没有刻意安排的起点。', items: ['学习人力资源管理。', '持续关注产品、历史和人们如何组织协作。', '也给值得记录的生活留些位置。'], draft: false },
+  { year: '2026.02', title: '开始有意识地记录 AI 学习。', items: ['探索助手角色和任务拆解。', '逐步区分提出的设想、生成的方案与真正操作过的配置。'], draft: false },
+  { year: '2026.05', title: '从体验工具，走向做出工具。', items: ['5 月记录了第一次使用 Claude Code 的经历。', '借助 AI 编程，把一些想法变成可以操作的页面。'], draft: false },
+  { year: '2026.10', title: '让作品可见，也让结果可检验。', items: ['GEO 客户工作形成搜见实验室与共用的研究展示入口。', '旅行、协作等原型逐渐有了界面和验收记录。', '继续补 Python、SQL、Git 与统计基础。'], draft: false },
 ];
 
-export const zhInterests = ['历史', '足球', '动漫', '旅行', 'AI', '随手做点东西'];
+export const zhInterests = ['文学阅读', '历史', '足球', '动漫', '旅行', '游戏与模拟', 'AI 与数字工具'];

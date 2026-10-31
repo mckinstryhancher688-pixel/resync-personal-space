@@ -1,5 +1,6 @@
 export const timeline = [
-  { year: '2026', title: 'Ideas started meeting the real world.', items: ['Building AI and GEO tools.', 'Working on real delivery for local businesses.', 'Connecting an interest in HR with hands-on AI projects.'], draft: true },
-  { year: 'Earlier', title: 'A lot of questions. No neat origin story.', items: ['Studying Human Resource Management.', 'Following an interest in products, history and how people organize.', 'Still leaving space for the parts worth recording.'], draft: false },
+  { year: '2026.02', title: 'Started keeping a deliberate AI learning record.', items: ['Exploring assistant roles and task decomposition.', 'Distinguishing ideas and generated plans from configurations I actually tried.'], draft: false },
+  { year: '2026.05', title: 'From trying tools to building them.', items: ['Recorded my first experience with Claude Code in May.', 'Began using AI-assisted implementation to turn ideas into working interfaces.'], draft: false },
+  { year: '2026.10', title: 'Make the work visible and inspectable.', items: ['GEO client work grew into Soujian Lab and its shared research showcase.', 'Travel and collaboration prototypes gained interfaces and validation records.', 'Continued building Python, SQL, Git and statistics foundations.'], draft: false },
 ];
-export const interests = ['History', 'Football', 'Anime', 'Travel', 'AI', 'Building random things'];
+export const interests = ['Literature', 'History', 'Football', 'Anime', 'Travel', 'Games & simulation', 'AI & digital tools'];

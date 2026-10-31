@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'research-lab', number: '02', name: 'Research Lab',
-    category: 'AI search · Monitoring', status: 'Research tool · offline checks recorded',
+    category: 'AI search · Monitoring', status: 'Research module · shared Soujian showcase',
     description: 'A separate place to investigate public sources and sample Doubao answers.',
     problem: 'A single AI answer says little about where a recommendation came from or whether it can be repeated.',
     built: 'A research tool that keeps sources, investigation snapshots and sampling results. Local tests checked the database and a bridge to GEO Copilot; ongoing live sampling has not yet been confirmed.',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'xuxiake-ai', number: '03', name: 'Xu Xiake AI',
-    category: 'AI · Travel · Product', status: 'In development · browser-tested',
+    category: 'AI · Travel · Product', status: 'Release recorded · public access needs rechecking',
     description: 'Two travel companions, one route they can both agree on.',
     problem: 'Two people may want different things from a trip. A useful planner has to explain trade-offs instead of silently choosing for them.',
     built: 'A two-person preference and constraint flow that combines Feizhu place candidates, Amap routes and AI explanations. Browser testing is recorded; I have not yet used it as my own travel tool.',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     category: 'AI agents · Collaboration', status: 'Prototype · transactions simulated',
     description: 'An experiment in assigning, quoting and accepting AI-assisted work.',
     problem: 'If an agent can help people coordinate work, who authorizes the action and who checks the outcome?',
-    built: 'A prototype for posting tasks, quoting, delivery and acceptance. Real model calls were tested; orders, counterparties and money are still simulated.',
+    built: 'A prototype covering requirements, quotes, mutual agreement, delivery checks and human acceptance. Its Agent Economy module has real model-call tests and local CSV/file execution. Identities and funds are simulated; this is not a live marketplace.',
     role: 'I set the product questions, tested the flow and reviewed decisions. AI handled almost all code implementation.',
     learning: 'A convincing demo is only the beginning of a trustworthy transaction workflow.',
   },

@@ -1,12 +1,11 @@
 export const now = {
-  updated: 'September 2026',
-  isDraft: true,
-  introduction: 'A small snapshot of where my attention is going. Always subject to change.',
+  updated: 'October 31, 2026', isDraft: false,
+  introduction: 'A snapshot grounded in project and learning records: make things, and be clear about how far they have come.',
   items: [
-    { label: 'Building', title: 'A better GEO evaluation workflow', text: 'Connecting retrieval, content checks and useful feedback into something easier to work with.' },
-    { label: 'Learning', title: 'AI systems, Python & HR', text: 'Following the technical questions, while keeping people and organizations in the picture.' },
-    { label: 'Thinking about', title: 'How AI changes organizations', text: 'Not just which tasks get faster, but how decisions and responsibilities change.' },
-    { label: 'Reading', title: 'Leaving room for the next good book', text: 'A reading list belongs here once there is something real to share.' },
-    { label: 'Trying', title: 'Writing more publicly', text: 'Turning half-formed questions into short notes. Letting them be a little unfinished.' },
+    { label: 'Curating', title: 'Make the work visible', text: 'Soujian Lab has a public interactive demo. I am adding actual interfaces, evidence and appropriate entry points for travel, collaboration and personal tools.' },
+    { label: 'Practising', title: 'Requirements, testing and human acceptance', text: 'From GEO client work to OneWork, I keep asking who defines a task, which part AI handles, and who decides whether it is complete.' },
+    { label: 'Learning', title: 'Python, SQL, Git and statistics', text: 'Building foundations through small exercises and project questions. AI-assisted project output is not the same as independent command of its stack.' },
+    { label: 'Thinking about', title: 'Organizational ideas for AI collaboration', text: 'Borrowing work analysis, role design and competency concepts to think about agent tasks, permissions, handoffs and responsibility. This remains an open exploration.' },
+    { label: 'Off-screen', title: 'Literature, history, football and travel', text: 'Reading literature, thinking about historical contexts, watching football and anime, and visiting cities. Not every interest needs to become productive.' },
   ],
 };

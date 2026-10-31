@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProject, getProjects } from '@/lib/content';
-import { ProjectVisual } from '@/components/ProjectVisual';
+import { ProjectEvidence } from '@/components/ProjectEvidence';
 
 export async function generateStaticParams() {
   return (await getProjects()).map(project => ({ slug: project.slug }));
@@ -25,8 +25,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <h1>{project.name}</h1><p>{project.description}</p>
         <div className="article-meta"><span>{project.status}</span><span>Project notes · an ongoing record</span></div>
       </header>
-      {(project.slug === 'geo-copilot' || project.slug === 'research-lab') && <p><a className="text-link" href={project.slug === 'research-lab' ? 'https://geo.peiqirui.com/lab/' : 'https://geo.peiqirui.com/'} target="_blank" rel="noreferrer">Explore interactive demo (fictional data) ↗</a></p>}
-      {project.featured && <ProjectVisual />}
+      <ProjectEvidence slug={project.slug} />
       <section className="project-detail-section"><h2>01 / THE PROBLEM</h2><p>{project.problem}</p></section>
       <section className="project-detail-section"><h2>02 / WHAT TOOK SHAPE</h2><p>{project.built}</p></section>
       {project.parts && <section className="project-detail-section"><h2>INSIDE THIS WORK</h2><div className="project-parts">{project.parts.map(part => <div key={part.name}><h3>{part.name}</h3><p>{part.description}</p></div>)}</div></section>}
